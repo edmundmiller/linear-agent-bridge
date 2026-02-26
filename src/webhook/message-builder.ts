@@ -14,9 +14,9 @@ export interface MessageParams {
 }
 
 export function buildLabel(id: string, title: string): string {
-  if (id && title) return `Linear ${id} ${title}`.slice(0, 80);
+  if (id && title) return `Linear ${id} ${title}`.slice(0, 64);
   if (id) return `Linear ${id}`;
-  if (title) return `Linear ${title}`.slice(0, 80);
+  if (title) return `Linear ${title}`.slice(0, 64);
   return "Linear issue";
 }
 
