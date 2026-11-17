@@ -12,6 +12,12 @@
   ],
   "scripts": {
     "build": "tsc",
+    "lint": "oxlint -c .oxlintrc.json index.ts src",
+    "lint:anti-slop": "oxlint -c .oxlintrc.json index.ts src",
+    "lint:strict": "oxlint -c .oxlintrc.strict.json index.ts src",
+    "lint:jev": "node tools/oxlint/anti-slop/jev/lint-changed.ts -c .oxlintrc.jev.json --no-error-on-unmatched-pattern",
+    "lint:jev:full": "node tools/oxlint/anti-slop/jev/lint-changed.ts --all -c .oxlintrc.jev.json index.ts src",
+    "lint:diff": "node tools/oxlint/anti-slop/diff-rules/run.ts --working",
     "prepublishOnly": "npm run build"
   },
   "keywords": [
@@ -45,7 +51,10 @@
     }
   },
   "devDependencies": {
+    "@oxlint/plugins": "1.86.0",
     "@types/node": "^20.19.33",
+    "oxlint": "1.86.0",
+    "oxlint-plugin-jev": "file:tools/oxlint/oxlint-plugin-jev",
     "typescript": "^5.0.0"
   }
 }

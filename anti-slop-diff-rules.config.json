@@ -1,0 +1,7 @@
+{
+  "exclude": [
+    "tools/oxlint/**", ".agent/**", ".agents/**", ".claude/**", ".codex/**",
+    ".continue/**", ".cursor/**", ".gemini/**", ".opencode/**", ".pi/**", ".roo/**", ".windsurf/**",
+    "**/*.png", "**/*.jpg", "**/*.svg"
+  ]
+}

@@ -3,3 +3,7 @@ dist/
 *.tsbuildinfo
 .DS_Store
 .claude
+
+# The pinned Jev package includes its reviewed distribution.
+!tools/oxlint/oxlint-plugin-jev/dist/
+!tools/oxlint/oxlint-plugin-jev/dist/**

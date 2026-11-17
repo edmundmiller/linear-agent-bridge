@@ -1,0 +1,46 @@
+{
+  "extends": ["./.oxlintrc.json"],
+  "categories": { "correctness": "off" },
+  "ignorePatterns": [
+    "node_modules/**", "dist/**", "build/**", "coverage/**",
+    ".agent/**", ".agents/**", ".claude/**", ".codex/**", ".continue/**",
+    ".cursor/**", ".gemini/**", ".opencode/**", ".pi/**", ".roo/**", ".windsurf/**",
+    "tools/oxlint/**"
+  ],
+  "jsPlugins": [
+    { "name": "anti-slop-martinfowler-jev", "specifier": "./tools/oxlint/anti-slop/martinfowler/jev-plugin.ts" }
+  ],
+  "rules": {
+    "anti-slop-martinfowler-jev/mysterious-name": "warn",
+    "anti-slop-martinfowler-jev/feature-envy": "warn",
+    "anti-slop-martinfowler-jev/data-clumps": "warn",
+    "anti-slop-martinfowler-jev/primitive-obsession": "warn",
+    "anti-slop-martinfowler-jev/middle-man": "warn",
+    "anti-slop-martinfowler-jev/lazy-element": "warn",
+    "anti-slop-martinfowler-jev/speculative-generality": "warn",
+    "anti-slop-martinfowler-jev/temporary-field": "warn",
+    "anti-slop-martinfowler-jev/insider-trading": "warn",
+    "anti-slop-martinfowler-jev/data-class": "warn",
+    "anti-slop-martinfowler-jev/comments": "warn",
+    "anti-slop-martinfowler-jev/repeated-switches": "warn"
+  },
+  "overrides": [
+    {
+      "files": ["**/*.test.*", "**/*.spec.*", "test/**", "tests/**"],
+      "rules": {
+        "anti-slop-martinfowler-jev/mysterious-name": "off",
+        "anti-slop-martinfowler-jev/feature-envy": "off",
+        "anti-slop-martinfowler-jev/data-clumps": "off",
+        "anti-slop-martinfowler-jev/primitive-obsession": "off",
+        "anti-slop-martinfowler-jev/middle-man": "off",
+        "anti-slop-martinfowler-jev/lazy-element": "off",
+        "anti-slop-martinfowler-jev/speculative-generality": "off",
+        "anti-slop-martinfowler-jev/temporary-field": "off",
+        "anti-slop-martinfowler-jev/insider-trading": "off",
+        "anti-slop-martinfowler-jev/data-class": "off",
+        "anti-slop-martinfowler-jev/comments": "off",
+        "anti-slop-martinfowler-jev/repeated-switches": "off"
+      }
+    }
+  ]
+}
